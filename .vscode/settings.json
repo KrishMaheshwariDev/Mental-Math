@@ -1,0 +1,8 @@
+{
+  "cmake.generator": "MinGW Makefiles",
+  "cmake.makeProgram": "C:/MinGW/bin/mingw32-make.exe",
+  "cmake.configureSettings": {
+    "CMAKE_CXX_COMPILER": "C:/MinGW/bin/g++.exe",
+    "CMAKE_C_COMPILER": "C:/MinGW/bin/gcc.exe"
+  }
+}
