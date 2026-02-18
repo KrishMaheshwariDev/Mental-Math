@@ -31,8 +31,7 @@ class StateMachine{
         States getCurrentState() const;           // returns the immutable state
         bool transitTo(const States next);  // transit to the next state if possible
         const std::vector<States>* getStateLogs() const; // get the logs of the states, states changes as per the index increases. no time recorded
-        std::string to_string(States state);
-    private:
+        private:
         States state;   // current state of the system
         std::vector<States> logs;   // Saving state transitions
         std::map<States, std::set<States>> ValidTransitions = { // Map for Valid Transitions
@@ -67,8 +66,9 @@ class StateMachine{
                 States::ANALYSING, {States::MENU, States::ERROR_RESOLVING, States::EXCEPTION_RESOLVING}
             }
         };    
-
+        
         bool isValidTransition(const States next);  // check the validity
-};
-
-#endif
+    };
+    
+    std::string enum_to_string(States state);
+    #endif

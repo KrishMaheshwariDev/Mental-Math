@@ -13,9 +13,9 @@ int main(){
 
         if(input == 1){
             sm.transitTo(States::EXIT);
-            cout << "Current State: " << sm.to_string(sm.getCurrentState()) << endl;
+            cout << "Current State: " << enum_to_string(sm.getCurrentState()) << endl;
             cout << "Exiting from the Program";
-            break;
+            continue;
         }
     }
 

@@ -8,6 +8,7 @@ project(Mental-Math-Engine)
 add_executable(MentalMath 
     "src/main.cpp"
     "src/engine/States.cpp"
+    "src/profile/profile.cpp"
 )
 
 target_include_directories(MentalMath PUBLIC include)

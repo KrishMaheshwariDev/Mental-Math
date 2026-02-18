@@ -10,7 +10,7 @@ bool StateMachine::transitTo(const States next){
     if(isValidTransition(next)){
         this->state = next;
         logs.push_back(this->state);
-        
+
         cout << "State is changed" << endl;
         return true;
     }
@@ -28,7 +28,7 @@ bool StateMachine::isValidTransition(const States next){
     return this->ValidTransitions[this->state].contains(next);
 }
 
-string StateMachine::to_string(States state){
+string enum_to_string(States state){
     switch(state){
         case States::EXIT: return "EXIT";
         case States::STARTUP: return "STARTUP";
