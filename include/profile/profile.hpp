@@ -12,6 +12,8 @@ class Profile{
         double lastSessionSpeed;
 
     public:
+        Profile(){};
+
         // getter methods
         bool isCalibrated() const;
         double getBaselineDifficulty() const;
@@ -31,4 +33,7 @@ class Profile{
         void setBestSpeed(double input);
         void setLastSessionAccuracy(double input);
         void setLastSessionSpeed(double input);
+
+        // utils
+        void increamentTotalSession();
 };
