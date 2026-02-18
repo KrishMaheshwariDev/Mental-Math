@@ -1,2 +1,3 @@
+D:/Projects/MentalMath/build/CMakeFiles/MentalMath.dir
 D:/Projects/MentalMath/build/CMakeFiles/edit_cache.dir
 D:/Projects/MentalMath/build/CMakeFiles/rebuild_cache.dir

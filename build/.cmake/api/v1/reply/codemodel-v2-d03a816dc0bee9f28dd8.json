@@ -10,10 +10,14 @@
 					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "4.2"
+						"string" : "3.19.2"
 					},
 					"projectIndex" : 0,
-					"source" : "."
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
 			"name" : "Debug",
@@ -24,10 +28,23 @@
 					[
 						0
 					],
-					"name" : "Mental-Math-Engine"
+					"name" : "Mental-Math-Engine",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
-			"targets" : []
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "MentalMath::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MentalMath-Debug-9f84bcccb6c2b8c19f93.json",
+					"name" : "MentalMath",
+					"projectIndex" : 0
+				}
+			]
 		}
 	],
 	"kind" : "codemodel",

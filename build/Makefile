@@ -91,13 +91,6 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\MentalMath\build\CMakeFiles 0
 .PHONY : all
 
-# The main codegen target
-codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\MentalMath\build\CMakeFiles D:\Projects\MentalMath\build\\CMakeFiles\progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\MentalMath\build\CMakeFiles 0
-.PHONY : codegen
-
 # The main clean target
 clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 clean
@@ -122,15 +115,82 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named MentalMath
+
+# Build rule for target.
+MentalMath: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MentalMath
+.PHONY : MentalMath
+
+# fast build rule for target.
+MentalMath/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/build
+.PHONY : MentalMath/fast
+
+src/engine/States.obj: src/engine/States.cpp.obj
+.PHONY : src/engine/States.obj
+
+# target to build an object file
+src/engine/States.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/src/engine/States.cpp.obj
+.PHONY : src/engine/States.cpp.obj
+
+src/engine/States.i: src/engine/States.cpp.i
+.PHONY : src/engine/States.i
+
+# target to preprocess a source file
+src/engine/States.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/src/engine/States.cpp.i
+.PHONY : src/engine/States.cpp.i
+
+src/engine/States.s: src/engine/States.cpp.s
+.PHONY : src/engine/States.s
+
+# target to generate assembly for a file
+src/engine/States.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/src/engine/States.cpp.s
+.PHONY : src/engine/States.cpp.s
+
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MentalMath.dir\build.make CMakeFiles/MentalMath.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... codegen
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... MentalMath
+	@echo ... src/engine/States.obj
+	@echo ... src/engine/States.i
+	@echo ... src/engine/States.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 
