@@ -11,4 +11,6 @@ add_executable(MentalMath
     "src/profile/profile.cpp"
 )
 
+
 target_include_directories(MentalMath PUBLIC include)
+target_include_directories(MentalMath PRIVATE libs)
