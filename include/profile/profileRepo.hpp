@@ -1,13 +1,14 @@
 #pragma once
 // #include <filesystem>
 #include "profile.hpp"
+#include <filesystem>
 
 class ProfileRepo{
     private:
-        std::string filePath;
-    
+        std::filesystem::path filePath;
+        int fileVersion;
     public:
-        ProfileRepo(): filePath("../../data/profile.json"){}
+        ProfileRepo(): filePath("../data/profile.json"){}
 
         bool load(Profile& profile);
         bool exists() const;

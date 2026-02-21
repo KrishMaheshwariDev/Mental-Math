@@ -5,12 +5,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)   
 
 project(Mental-Math-Engine)
-add_executable(MentalMath 
-    "src/main.cpp"
-    "src/engine/States.cpp"
-    "src/profile/profile.cpp"
-)
 
+add_executable(MentalMath)
+
+target_sources(MentalMath
+    PRIVATE
+        "src/main.cpp"
+        "src/engine/States.cpp"
+        "src/profile/profile.cpp"
+        "src/profile/profileRepo.cpp"
+)
 
 target_include_directories(MentalMath PUBLIC include)
 target_include_directories(MentalMath PRIVATE libs)
