@@ -8,13 +8,16 @@ project(Mental-Math-Engine)
 
 add_executable(MentalMath)
 
-target_sources(MentalMath
-    PRIVATE
-        "src/main.cpp"
-        "src/engine/States.cpp"
-        "src/profile/profile.cpp"
-        "src/profile/profileRepo.cpp"
-)
+file(GLOB ENGINE_SOURCES "src/engine/*.cpp")
+file(GLOB PROFILE_SOURCES "src/profile/*.cpp")
+file(GLOB QUESTION_SOURCES "src/questions/*.cpp")
+
+target_sources(MentalMath PRIVATE
+    src/main.cpp
+    ${ENGINE_SOURCES}
+    ${PROFILE_SOURCES}
+    ${QUESTION_SOURCES}
+)   
 
 target_include_directories(MentalMath PUBLIC include)
 target_include_directories(MentalMath PRIVATE libs)

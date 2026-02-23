@@ -70,5 +70,5 @@ class StateMachine{
         bool isValidTransition(const States next);  // check the validity
     };
     
-    std::string enum_to_string(States state);
-    #endif
+std::string enum_to_string(States state);
+#endif
