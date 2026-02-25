@@ -11,7 +11,12 @@ D_model::D_model(double rating){
     parameters.divWeight = std::max(0.0, normalizedRating - 0.4);
 
     // probability of the operations normalized from 0 to 1
-    double totalWeight = parameters.addWeight + parameters.subWeight + parameters.mulWeight + parameters.divWeight;
+    double totalWeight = 
+        parameters.addWeight
+        + parameters.subWeight
+        + parameters.mulWeight
+        + parameters.divWeight;
+    
     parameters.addWeight = parameters.addWeight/totalWeight;
     parameters.subWeight = parameters.subWeight/totalWeight;
     parameters.mulWeight = parameters.mulWeight/totalWeight;

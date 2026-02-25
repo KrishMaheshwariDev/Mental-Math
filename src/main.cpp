@@ -10,11 +10,11 @@ using namespace std;
 int main(){
     int ratings[] = {300, 700, 1100, 1700, 2500, 2700};
 
-    for(int i = 0; i< 6; i++){
-        D_model model = D_model(ratings[i]);
+    for(int i = 300; i <= 3000; i = i +  50){
+        D_model model = D_model(i);
         DifficultyParams params = model.getPrams();
 
-        cout << "Rating: " << ratings[i]<< endl;
+        cout << "Rating: " << i << endl;
         cout << "Digit count: " << params.digitCount << endl;
         cout << "Add weight: " << params.addWeight << endl;
         cout << "Sub weight: " << params.subWeight << endl;
