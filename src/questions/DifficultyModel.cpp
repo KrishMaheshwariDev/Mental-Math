@@ -2,20 +2,48 @@
 
 void D_model::compute(){
     // main scalar component to comute difficulty model
-    double scalar = 1 - pow(std::numeric_limits<double>::epsilon(), userRating / k);
+    double scalar = 1 - pow(std::numbers::e, -userRating / k);
 
     // digit Count
-    parameters.digitCount1 = 1 + floor(3 * pow(scalar, 0.8));
-    parameters.digitCount2 = 1 + floor(2 * pow(scalar, 0.9));
+    int stage = std::min(5, int(6 * scalar));
+    switch (stage)
+    {
+    case 0:
+        parameters.digitCount1 = 1;
+        parameters.digitCount2 = 1;
+        break;
+    case 1:
+        parameters.digitCount1 = 2;
+        parameters.digitCount2 = 1;
+        break;
+    case 2:
+        parameters.digitCount1 = 3;
+        parameters.digitCount2 = 1;
+        break;
+    case 3:
+        parameters.digitCount1 = 2;
+        parameters.digitCount2 = 2;
+        break;  
+    case 4:
+        parameters.digitCount1 = 3;
+        parameters.digitCount2 = 2;
+        break; 
+    case 5:
+        parameters.digitCount1 = 3;
+        parameters.digitCount2 = 3;
+        break; 
+    default:
+        break;
+    }
 
     // Operator probabilities
-    double A = pow(1 - scalar, 2);
-    double M = scalar * scalar;
+    double A = pow(1 - scalar, 1.2);
+    double M = pow(scalar, 1.3);
 
-    parameters.addWeight = 0.45 * A;
-    parameters.subWeight = 0.35 * A;
-    parameters.mulWeight = 0.45 * M;
-    parameters.divWeight = 0.25 * M;
+    parameters.addWeight = 0.4 * A + 0.05;
+    parameters.subWeight = 0.3 * A + 0.05;
+    parameters.mulWeight = 0.45 * M + 0.05;
+    parameters.divWeight = 0.25 * M + 0.05;
 
     double totalWeight = parameters.addWeight + parameters.subWeight + parameters.mulWeight + parameters.divWeight;
 
@@ -25,13 +53,14 @@ void D_model::compute(){
     parameters.divWeight /= totalWeight; 
 
     // Carry probability
-    parameters.CarryProb = 0.1 + 0.75 * pow(scalar, 1.2);
-    parameters.CarryPropagation = 1 + floor(2 * pow(scalar, 1.5));
+    parameters.CarryProb = 0.05 + 0.75 * pow(scalar, 1.1);
+    if (scalar < 0.6) parameters.CarryPropagation = 1;
+    else parameters.CarryPropagation = 2;
 
     //complexity level
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<double> dis(-0.05, 0.05);
+    std::uniform_real_distribution<double> dis(-0.04, 0.04);
 
     parameters.complexityLevel = pow(scalar, 1.3) + dis(gen);
 }

@@ -8,7 +8,7 @@
 // D_model take rating as input and returns a DifficultyParams struct
 class D_model{
     private:
-        double k = 900;
+        double k = 1100;
         double userRating;
         DifficultyParams parameters;
 
