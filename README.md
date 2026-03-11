@@ -1,1 +1,3 @@
 # Mental Math Engine
+
+i have no idea what the hell is going on in the project...
