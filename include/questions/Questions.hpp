@@ -15,7 +15,7 @@ struct Question{
     int operandA;
     int operandB;
     Operation operation;
-    float correctAnswer;
+    int correctAnswer;  
     double difficultyScore;
     double rating;
 };
