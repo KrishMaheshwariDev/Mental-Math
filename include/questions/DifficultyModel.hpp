@@ -14,6 +14,8 @@ class D_model{
 
     public:
         D_model(double rating): userRating(rating){};
+        D_model() = default;
+        void set_rating(double rating);
         void compute();
         DifficultyParams getPrams() const;
 };

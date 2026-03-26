@@ -68,3 +68,7 @@ void D_model::compute(){
 DifficultyParams D_model::getPrams() const{
     return parameters;
 }
+
+void D_model::set_rating(double rating){
+    this->userRating = rating;
+}

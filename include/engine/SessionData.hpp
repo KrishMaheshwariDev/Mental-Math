@@ -17,10 +17,10 @@ struct SessionConfig{
 };
 
 struct SessionState{
-    int currentIndex;
-    int livesRemaining;
-    int correctCount;
-    bool isActive;
+    int currentIndex = 0;
+    int livesRemaining = 0; // ignored for sprint and precision
+    int correctCount = 0;
+    bool isActive = false;
 };
 
 struct Attempt{
